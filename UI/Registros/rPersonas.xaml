@@ -1,0 +1,35 @@
+﻿<Window x:Class="RegistroDetails.UI.Registros.rPersonas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroDetails.UI.Registros"
+        mc:Ignorable="d"
+        Title="Registro Personas" Height="500" Width="585" ResizeMode="NoResize">
+    <Grid>
+        <Label x:Name="IdLabel" Content="ID" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.37,-0.307"/>
+        <Label x:Name="NombreLabel" Content="Nombre" HorizontalAlignment="Left" Margin="18,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="DireccionLabel" Content="Direccion" HorizontalAlignment="Left" Margin="18,72,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="CedulaLabel" Content="Cedula" HorizontalAlignment="Left" Margin="18,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.102,0.554"/>
+        <Label x:Name="FechaNacLabel" Content="F. Nacimiento" HorizontalAlignment="Left" Margin="273,107,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Margin="88,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" RenderTransformOrigin="0.525,-0.406"/>
+        <TextBox x:Name="NombreTextBox" HorizontalAlignment="Left" Margin="88,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
+        <TextBox x:Name="DireccionTextBox" HorizontalAlignment="Left" Margin="88,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
+        <TextBox x:Name="CedulaTextBox" HorizontalAlignment="Left" Margin="88,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
+        <DatePicker x:Name="FechaDatePicker" HorizontalAlignment="Left" Height="26" Margin="361,107,0,0" VerticalAlignment="Top" Width="103" DisplayDate="2020-03-03" IsTodayHighlighted="True" SelectedDateFormat="Short"/>
+        <GroupBox x:Name="TelefonosGrupBox" Header="Agregar Telefonos" HorizontalAlignment="Left" Height="249" VerticalAlignment="Top" Width="491" Margin="18,149,0,0" RenderTransformOrigin="0.495,0.185">
+            <TextBox x:Name="TipoTextBox" HorizontalAlignment="Left" Margin="270,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18"/>
+        </GroupBox>
+        <Label x:Name="TelefonoLabel" Content="Telefono:" HorizontalAlignment="Left" Margin="39,159,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.044,-0.05"/>
+        <Label x:Name="TipoLabel" Content="Tipo: " HorizontalAlignment="Left" Margin="256,159,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.533,1.273"/>
+        <TextBox x:Name="TelefonoTextBox" HorizontalAlignment="Left" Margin="102,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="DetalleDataGrid" HorizontalAlignment="Left" Height="166" Margin="26,190,0,0" VerticalAlignment="Top" Width="469"/>
+        <Button x:Name="ButtonRemo" Content="- Remover Fila" HorizontalAlignment="Left" Margin="29,361,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="ButtonRemo_Click"/>
+        <Button x:Name="ButtonAgreg" Content="Agregar" HorizontalAlignment="Left" Margin="424,165,0,0" VerticalAlignment="Top" Width="74" Click="ButtonAgreg_Click"/>
+        <Button x:Name="ButtonNew" Content="Nuevo" HorizontalAlignment="Left" Margin="88,418,0,0" VerticalAlignment="Top" Height="38" Width="84" Click="ButtonNew_Click"/>
+        <Button x:Name="ButtonSave" Content="Guardar" HorizontalAlignment="Left" Margin="216,418,0,0" VerticalAlignment="Top" Height="38" Width="84" Click="ButtonSave_Click"/>
+        <Button x:Name="ButtonEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="343,418,0,0" VerticalAlignment="Top" Height="38" Width="84" Click="ButtonEliminar_Click"/>
+        <Button x:Name="ButtonSearch" Content="Buscar" HorizontalAlignment="Left" Margin="162,13,0,0" VerticalAlignment="Top" Height="27" RenderTransformOrigin="0.446,0.866" Width="72" Click="ButtonSearch_Click"/>
+
+    </Grid>
+</Window>
