@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RegistroDetails;
+using RegistroDetails.DAL;
 
 namespace RegistroDetails.Migrations
 {

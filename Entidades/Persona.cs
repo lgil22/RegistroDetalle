@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace RegistroDetails.Entidades
 {
@@ -15,6 +17,7 @@ namespace RegistroDetails.Entidades
         public string Direccion { get; set; }
         public DateTime FechaNacimiento { get; set; }
 
+        [ForeignKey("PersonaId")]
         public virtual List<TelefonoDetalles> Telefonos { get; set; }
 
         public Persona()
@@ -30,7 +33,7 @@ namespace RegistroDetails.Entidades
 
         }
 
-        public Persona(int personaid, string nombre, string cedula, string direccion, DateTime fechanacimiento)
+      /*  public Persona(int personaid, string nombre, string cedula, string direccion, DateTime fechanacimiento)
         {
             PersonaId = personaid;
             Nombre = nombre;
@@ -40,7 +43,7 @@ namespace RegistroDetails.Entidades
             FechaNacimiento = fechanacimiento;
             Telefonos = new List<TelefonoDetalles>();
 
-        }
+        }*/
 
     }
 }

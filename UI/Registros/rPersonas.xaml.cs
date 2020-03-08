@@ -17,7 +17,7 @@ namespace RegistroDetails.UI.Registros
         public rPersonas()
         {
             InitializeComponent();
-            this.Detalles = new List<TelefonoDetalles>();
+            Detalles = new List<TelefonoDetalles>();
         }
 
         private void Limpiar()
@@ -29,7 +29,7 @@ namespace RegistroDetails.UI.Registros
             DireccionTextBox.Text = string.Empty;
             FechaDatePicker.SelectedDate = DateTime.Now;
 
-            this.Detalles = new List<TelefonoDetalles>();
+            Detalles = new List<TelefonoDetalles>();
 
             CargarGrid();
 
@@ -46,7 +46,7 @@ namespace RegistroDetails.UI.Registros
             personas.Cedula = CedulaTextBox.Text;
             personas.Direccion = DireccionTextBox.Text;
             personas.FechaNacimiento = (DateTime)FechaDatePicker.SelectedDate;
-            personas.Telefonos = this.Detalles;
+            personas.Telefonos = Detalles;
 
             return personas;
         }
@@ -59,7 +59,7 @@ namespace RegistroDetails.UI.Registros
             DireccionTextBox.Text = personas.Direccion;
             FechaDatePicker.SelectedDate = personas.FechaNacimiento;
 
-            this.Detalles = personas.Telefonos;
+           Detalles = personas.Telefonos;
             CargarGrid();
         }
 
@@ -105,13 +105,6 @@ namespace RegistroDetails.UI.Registros
             return (personas != null);
         }
 
-
-        private void CargarGrid()
-        {
-            DetalleDataGrid.ItemsSource = null;
-            DetalleDataGrid.ItemsSource = Detalles;
-        }
-
         private void ButtonNew_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
@@ -124,26 +117,31 @@ namespace RegistroDetails.UI.Registros
             //todo: validar campos del detalle
 
             //Agregar un nuevo detalle con los datos introducidos.
-            this.Detalles.Add(
-                new TelefonoDetalles(
-                    id: 0,
-                    idPersona: (int)IdTextBox.Text.ToInt(),
-                    telefono: TelefonoTextBox.Text,
-                    tipoTelefono: TipoTextBox.Text
-                    )
-               );
+            Detalles.Add(new TelefonoDetalles 
+            {
+             
+                TipoTelefono= TipoTextBox.Text,
+
+                Telefono = TelefonoTextBox.Text
+                     /*id: 0,
+                     //idPersona: (int)IdTextBox.Text.ToInt(),
+                     telefono: TelefonoTextBox.Text,
+                     tipoTelefono: TipoTextBox.Text*/
+                     
+                });
 
             CargarGrid();
             TelefonoTextBox.Focus();
             TelefonoTextBox.Clear();
             TipoTextBox.Clear();
+          
         }
 
         private void ButtonRemo_Click(object sender, RoutedEventArgs e)
         {
 
 
-            if (DetalleDataGrid.Items.Count > 0 && DetalleDataGrid.CurrentItem != null)
+            if (DetalleDataGrid.Items.Count > 0 && DetalleDataGrid.SelectedItem != null)
             {
                 //remover la fila
                 Detalles.RemoveAt(DetalleDataGrid.SelectedIndex);
@@ -153,6 +151,12 @@ namespace RegistroDetails.UI.Registros
             }
 
             //DetalleDataGrid.Items.RemoveAt(DetalleDataGrid.SelectedIndex);
+        }
+
+        private void CargarGrid()
+        {
+            DetalleDataGrid.ItemsSource = null;
+            DetalleDataGrid.ItemsSource = Detalles;
         }
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)

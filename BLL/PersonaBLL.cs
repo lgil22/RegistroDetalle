@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
-
+using RegistroDetails.DAL;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace RegistroDetails.BLL
@@ -100,10 +101,12 @@ namespace RegistroDetails.BLL
                 // El Count() lo que hace es engañar al lazyloading y obligarlo a cargar los detalles 
                 personas.Telefonos.Count();
 
-               /* personas = db.Persona
+                /*personas = db.Persona
                          .Include(x => x.Telefonos.Select(c => c.PersonaId))
                                 .Where(p => p.PersonaId == id)
                            .FirstOrDefault();*/
+                personas = db.Persona.Where(x => x.PersonaId == id).
+                    Include(o => o.Telefonos).SingleOrDefault();
             }
             catch (Exception)
             {

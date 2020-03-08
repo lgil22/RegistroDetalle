@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RegistroDetails.Entidades;
 
-namespace RegistroDetails
+namespace RegistroDetails.DAL
 {
     public class Contexto : DbContext
     {
