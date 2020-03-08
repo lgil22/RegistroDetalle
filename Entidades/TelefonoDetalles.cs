@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RegistroDetails.Entidades
 {
@@ -9,6 +10,7 @@ namespace RegistroDetails.Entidades
      //  public int PersonaId { get; set; }
         public string TipoTelefono { get; set; }
         public string Telefono { get; set; }
+
 
         public TelefonoDetalles() //int id, string telefono, string tipoTelefono)
         {

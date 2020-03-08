@@ -7,6 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using RegistroDetails.DAL;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.Data.Sqlite;
 
 
 namespace RegistroDetails.BLL

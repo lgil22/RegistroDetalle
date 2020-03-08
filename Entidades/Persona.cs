@@ -28,22 +28,10 @@ namespace RegistroDetails.Entidades
             Cedula = string.Empty;
             Direccion = string.Empty;
             FechaNacimiento = DateTime.Now;
-
             Telefonos = new List<TelefonoDetalles>();
 
         }
 
-      /*  public Persona(int personaid, string nombre, string cedula, string direccion, DateTime fechanacimiento)
-        {
-            PersonaId = personaid;
-            Nombre = nombre;
-            //   Telefono = telefono;
-            Cedula = cedula;
-            Direccion = direccion;
-            FechaNacimiento = fechanacimiento;
-            Telefonos = new List<TelefonoDetalles>();
-
-        }*/
-
+   
     }
 }

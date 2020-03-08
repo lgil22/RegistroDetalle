@@ -6,6 +6,7 @@ using System.Windows;
 
 
 
+
 namespace RegistroDetails.UI.Registros
 {
     /// <summary>
@@ -122,7 +123,7 @@ namespace RegistroDetails.UI.Registros
              
                 TipoTelefono= TipoTextBox.Text,
 
-                Telefono = TelefonoTextBox.Text
+                Telefono = TelefonoTextBox.Text,
                      /*id: 0,
                      //idPersona: (int)IdTextBox.Text.ToInt(),
                      telefono: TelefonoTextBox.Text,
