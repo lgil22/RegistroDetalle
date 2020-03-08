@@ -7,7 +7,7 @@ namespace RegistroDetails.Entidades
     {
         [Key]
         public int Id { get; set; }
-     //  public int PersonaId { get; set; }
+       public int PersonaId { get; set; }
         public string TipoTelefono { get; set; }
         public string Telefono { get; set; }
 
@@ -16,7 +16,7 @@ namespace RegistroDetails.Entidades
         {
 
             Id = 0;
-           // PersonaId = 0;
+            PersonaId = 0;
             TipoTelefono = string.Empty;
             Telefono = string.Empty;
         }

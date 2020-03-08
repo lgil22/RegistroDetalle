@@ -4,9 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 
-
-
-
 namespace RegistroDetails.UI.Registros
 {
     /// <summary>
