@@ -98,15 +98,9 @@ namespace RegistroDetails.BLL
             Persona personas = new Persona();
             try
             {
-                personas = db.Persona.Find(id);
                 // El Count() lo que hace es engañar al lazyloading y obligarlo a cargar los detalles 
-                personas.Telefonos.Count();
-
-                /*personas = db.Persona
-                         .Include(x => x.Telefonos.Select(c => c.PersonaId))
-                                .Where(p => p.PersonaId == id)
-                           .FirstOrDefault();*/
-                personas = db.Persona.Where(x => x.PersonaId == id).
+                    personas.Telefonos.Count();
+                    personas = db.Persona.Where(x => x.PersonaId == id).
                     Include(o => o.Telefonos).SingleOrDefault();
             }
             catch (Exception)

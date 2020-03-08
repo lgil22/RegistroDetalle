@@ -169,8 +169,8 @@ namespace RegistroDetails.UI.Registros
             Limpiar();
 
             //Determinar si es guardar o modificar
-            if (IdTextBox.Text == "0")
-                paso = PersonaBLL.Guardar(personas);
+           /* if (IdTextBox.Text == "0")
+                paso = PersonaBLL.Guardar(personas);*/
 
             if (string.IsNullOrWhiteSpace(IdTextBox.Text) || IdTextBox.Text == "0")
                 paso = PersonaBLL.Guardar(personas);
